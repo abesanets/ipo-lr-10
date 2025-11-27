@@ -23,6 +23,7 @@ try:
     isCollisionRect([(1, 1), (2, 2)], [(3, 17), (13, 1)])  # Вызовет ошибку
 except RectCorrectError as e:
     print(f"Ошибка: {e}")
+print()
 
 
 #-----------------ЗАДАНИЕ 4------------------
@@ -38,3 +39,30 @@ try:
     intersectionAreaRect([(1, 1), (2, 2)], [(3, 17), (13, 1)])  # Вызовет ошибку
 except ValueError as e:
     print(f"Ошибка: {e}")
+print()
+
+
+#-----------------ЗАДАНИЕ 5------------------
+print("-----------------ЗАДАНИЕ 5------------------")
+from collision import intersectionAreaMultiRect, RectCorrectError
+
+# Пример из задания
+rectangles = [
+    [(-3, 1), (9, 10)],
+    [(-7, 0), (13, 12)],
+    [(0, 0), (5, 5)],
+    [(2, 2), (7, 7)]
+]
+result = intersectionAreaMultiRect(rectangles)
+print(f"Уникальная площадь пересечения: {result}")
+
+# Проверка ошибки
+try:
+    incorrect_rectangles = [
+        [(-3, 1), (9, 10)],
+        [(3, 17), (13, 1)]  # Некорректный прямоугольник
+    ]
+    intersectionAreaMultiRect(incorrect_rectangles)
+except RectCorrectError as e:
+    print(f"Ошибка: {e}")
+print()
