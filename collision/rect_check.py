@@ -1,3 +1,7 @@
+class RectCorrectError(Exception):
+    """Ошибка для некорректных прямоугольников"""
+    pass
+
 def isCorrectRect(points):
     """
     Проверяет корректность введенных координат прямоугольника.
@@ -35,4 +39,3 @@ def isCorrectRect(points):
         return False
     
     return True
-
