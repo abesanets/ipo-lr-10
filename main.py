@@ -23,3 +23,18 @@ try:
     isCollisionRect([(1, 1), (2, 2)], [(3, 17), (13, 1)])  # Вызовет ошибку
 except RectCorrectError as e:
     print(f"Ошибка: {e}")
+
+
+#-----------------ЗАДАНИЕ 4------------------
+print("-----------------ЗАДАНИЕ 4------------------")
+from collision import intersectionAreaRect
+
+# Примеры из задания
+print(intersectionAreaRect([(-3, 1), (9, 10)], [(-7, 0), (13, 12)]))  # Положительное число
+print(intersectionAreaRect([(1, 1), (2, 2)], [(3, 0), (13, 1)]))      # 0.0
+
+# Проверка ошибки
+try:
+    intersectionAreaRect([(1, 1), (2, 2)], [(3, 17), (13, 1)])  # Вызовет ошибку
+except ValueError as e:
+    print(f"Ошибка: {e}")
